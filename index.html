@@ -3,27 +3,83 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Antonio Pierro - Processign Project</title>
+        <title>Gloria Stara - Processign Project</title>
         <script src="vendors/processing.min.js"></script>
     </head>
     <body>
-        <h1>Processing project by Antonio</h1>
+        <h1>Processing project by Gloria Stara</h1>
         <script type="text/processing">
 
-            // Write your project here
-            
-            // Example
-            void setup() {
-              size(200, 200);
-              background(255);
-            }
-            void draw(){
-                pushMatrix();
-                translate(100, 100);
-                rotate(radians(frameCount * 2  % 360));
-                rect(0, 0, 80, 5);
-                popMatrix();
-            }
+float r; 
+float x, y;
+float a = 0;
+float s = 0;
+
+void setup()
+{
+  size (500, 500);
+  noStroke();
+  ellipseMode(CENTER);
+  frameRate(40);
+  x = 800;
+  y = 800;
+}
+void draw (){
+  background (255,200,200); 
+
+  s = cos(a);
+  scale(0.5);
+  pushMatrix ();
+  translate (width/2, height/2);
+  rotate (radians(r));
+ 
+  fill(0, 0, 255);
+  ellipse(340, 340, 60, 60);
+  scale(s);
+
+  fill(255, 0, 60); //fuxia
+  ellipse(310, 310, 60, 60);
+  scale(s); 
+
+  fill(150, 255, 80); //verde
+  ellipse(280, 280, 60, 60);
+  scale(s);
+
+  fill(0, 0, 255);  //blu
+  ellipse(250, 250, 60, 60);
+  scale(s);
+
+  fill(255, 0, 60); //fuxia
+  ellipse(220, 220, 60, 60);
+  scale(s);
+
+  fill(150, 255, 80); //verde
+  ellipse(190, 190, 60, 60);
+  scale(s);
+ 
+  fill (255, 255, 0); //giallo
+  ellipse (150, 150, 80, 80);
+  scale(s);
+ 
+  fill (0, 0, 0); //nero occhi dx
+  ellipse (150, 130, 10, 10);
+  scale(s);
+ 
+  fill (255, 255, 255); //bianco occhi dx
+  ellipse (150, 130, 5, 5);
+  scale(s);
+  
+  fill (0, 0, 0);  //nero occhi sx
+  ellipse (130, 150, 10, 10);
+  scale(s);
+  
+  fill (255, 255, 255); //bianco occhi sx
+  ellipse (130, 150, 5, 5);
+  scale(s);
+
+popMatrix ();
+  r += 1; 
+}
             
         </script>
         <canvas></canvas>
